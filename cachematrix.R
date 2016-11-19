@@ -6,14 +6,14 @@
 ## This function creates a special "matrix" object that can cache
 ## its inverse
 
-makeCacheMatrix <- function(x = numeric()) {
+makeCacheMatrix <- function(x = matrix()) {
       matrixinv <- NULL
       set <- function(y) {
             x <<- y
             matrixinv <<- NULL
       }
       get <- function() x
-      setmatrixinv <- function(solve) matrixinv <<- solve
+      setmatrixinv <- function(inverse) matrixinv <<- inverse
       getmatrixinv <- function() matrixinv
       list(set = set, get = get,
            setmatrixinv = setmatrixinv,
